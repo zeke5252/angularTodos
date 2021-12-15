@@ -1,17 +1,12 @@
 <div class="todos">
-        <form (submit)="addTodo()" class="header">
-            <h1 style="margin:5px">My To Do List</h1>
-            <input type="text"
-                placeholder="Title..."
-                name="inputTodo"
-                [(ngModel)]="inputTodo"
-            >
-            <input type="submit" value="Add" class="addBtn">
-        </form> 
-        <ul>
-            <li (click)="toggleTodo(i)" *ngFor="let todo of todos; let i= index;" [class.checked]="todo.completed">
-                {{todo.content}}
-                <span (click)="deleteTodo(i)" class="close">×</span>
-            </li>
-        </ul>
+  <ul>
+    <li
+      (click)="toggleTodo(i)"
+      *ngFor="let todo of todos; let i = index"
+      [class.checked]="todo.completed"
+    >
+      {{ todo.content }}
+      <span (click)="deleteTodo(i)" class="close">×</span>
+    </li>
+  </ul>
 </div>
